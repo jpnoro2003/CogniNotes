@@ -1,0 +1,6 @@
+streamlit
+pickle
+youtube_transcript_api
+spacy
+pytextrank
+openai
