@@ -6,6 +6,10 @@ import spacy
 import pytextrank
 import pickle
 import openai
+from spacy.lang.en.stop_words import STOP_WORDS
+from string import punctuation
+from collections import Counter
+from heapq import nlargest
 
 # Load SpaCy NLP processing Model
 
@@ -34,13 +38,28 @@ def study_guide(vid_id):
             doc = nlp(transcript)
 
             # Get most relevant key sentences
-            test = ''
-            for sentence in doc._.textrank.summary(limit_sentences=50):
-                test = test + str(sentence) + " "
-                # print(len(test))
-                if len(test) >= 10000:
-                    break
+            keyword = []
+            stopwords = list(STOP_WORDS)
+            pos_tag = ['PROPN', 'ADJ', 'NOUN', 'VERB']
+            for token in doc:
+                if(token.text in stopwords or token.text in punctuation):
+                    continue
+                if (token.pos_ in pos_tag)
 
+            freq_word = counter(keyword)
+            max_freq = Counter(keyword).most_common(1)[0](1)
+            for word in freq_word.keys():
+                freq_word[word] = (freq_word[word]/max_freq)
+
+            sent_strength = {}
+            for sent in doc.sents:
+                for word in sent:
+                    if word.text in freq_word.keys():
+                        if sent in sent_strength.keys():
+                            sent_strength[sent] = sent_strength[sent] + freq_word[word.text]
+                        else:
+                            sent_strength[sent] = freq_word[word.text]
+            test = nlargest(5,sent_strength,key=sent_strength.get)
             # Summary
             messages = [ {"role": "system", "content": "You are a intelligent assistant"}]
 
