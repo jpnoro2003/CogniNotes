@@ -44,7 +44,8 @@ def study_guide(vid_id):
             for token in doc:
                 if(token.text in stopwords or token.text in punctuation):
                     continue
-                if (token.pos_ in pos_tag)
+                if (token.pos_ in pos_tag):
+                    keyword.append(token.text)
 
             freq_word = counter(keyword)
             max_freq = Counter(keyword).most_common(1)[0](1)
