@@ -48,6 +48,7 @@ def study_guide(vid_id):
                     keyword.append(token.text)
 
             freq_word = Counter(keyword)
+            print(Counter(keyword).most_common(1))
             max_freq = Counter(keyword).most_common(1)[0](1)
             for word in freq_word.keys():
                 freq_word[word] = (freq_word[word]/max_freq)
