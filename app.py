@@ -20,7 +20,6 @@ st.write('---')
 # Generate Study Guide
 def study_guide(vid_id):
     with st.spinner('Creating Guide...'):
-        try:
             # Convert transcript into string
             data = yta.get_transcript(vid_id)
             transcript = ''
@@ -30,7 +29,7 @@ def study_guide(vid_id):
                         transcript += val + ' '
 
             nlp = spacy.load('en_core_web_sm')
-            
+
             # Transform transcript with SpaCy model
             doc = nlp(transcript)
 
@@ -141,8 +140,6 @@ def study_guide(vid_id):
             st.subheader('Study Questions')
             st.write(study_questions)
             st.write('---')
-        except:
-            st.write('ERROR')
 
 # Get Video ID as input from user
 input_col1, input_col2 = st.columns([4,1])
