@@ -3,3 +3,4 @@ youtube_transcript_api
 spacy
 pytextrank
 openai
+en_core_web_sm
