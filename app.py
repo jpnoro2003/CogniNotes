@@ -8,6 +8,10 @@ st.sidebar.image("Logo.png")
 st.sidebar.write('Learn Faster with AI-Generated Study Guides from YouTube! Powered by GPT-3.5 by OpenAI.')
 st.sidebar.write('---')
 
+st.title(":robot_face: Welcome to CogniNotes!")
+st.write("CogniNotes is a tool that leverages OpenAI's ChatGPT to generate study guides based on YouTube videos!")
+st.write("To use the tool, copy the video id from the youtube url, paste it in the text box in the side bar, and press enter!")
+
 # Generate Study Guide
 def study_guide(vid_id):
     with st.spinner('Creating Guide...'):
