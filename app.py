@@ -53,7 +53,7 @@ def study_guide(vid_id):
             # st.write('---')
         except Exception as e:
 
-            st.failure(str(e))
+            st.write(str(e))
             
 
 # Get Video ID as input from user
