@@ -17,7 +17,6 @@ def study_guide(vid_id):
     with st.spinner('Creating Guide...'):
 
         data = requests.get("http://ec2-3-136-116-97.us-east-2.compute.amazonaws.com/generate?vid_id="+str(vid_id)).json()
-        st.write(str(data))
         try:
             ##### Show Content #####
 
@@ -53,7 +52,7 @@ def study_guide(vid_id):
             # st.write('---')
         except Exception as e:
 
-            st.write(str(e))
+            st.write("ERROR: " + str(e))
             
 
 # Get Video ID as input from user
