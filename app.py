@@ -17,7 +17,7 @@ def study_guide(vid_id):
     with st.spinner('Creating Guide...'):
 
         data = requests.get("http://ec2-3-136-116-97.us-east-2.compute.amazonaws.com/generate?vid_id="+str(vid_id)).json()
-
+        st.write(str(data))
         try:
             ##### Show Content #####
 
