@@ -19,7 +19,6 @@ def study_guide(vid_id):
         data = requests.get("http://ec2-3-136-116-97.us-east-2.compute.amazonaws.com/generate?vid_id="+str(vid_id)).json()
         try:
             ##### Show Content #####
-            st.write(data)
             # Title with main topic
             st.header(data['main_title'])
 
@@ -52,7 +51,7 @@ def study_guide(vid_id):
             # st.write('---')
         except Exception as e:
 
-            st.write("ERROR: " + str(e))
+            st.write("ERROR: " + str(data["summary"]))
             
 
 # Get Video ID as input from user
